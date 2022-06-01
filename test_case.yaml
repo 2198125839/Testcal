@@ -1,0 +1,62 @@
+#casename：填写测试用例名字，方便查找用例
+#data：填入测试数据
+#assert：填入断言结果
+#group：填入分组，不填则表示p0级别
+
+
+#用例1
+-
+  casename: 数据包含字符串
+  data: "'a',1,4"
+  assert: 数据类型错误
+  group: p0
+
+#用例2
+-
+  casename: 数字之和大于5
+  data: "1,2,7"
+  assert: err
+  group: p0
+
+#用例3
+-
+  casename: 数字之和小于5
+  data: "1,1,2"
+  assert: err
+  group: p1
+
+#用例4
+-
+  casename: 数字之和等于5
+  data: "1,2,2"
+  assert: [1, 2, 2]
+  group: p0
+
+#用例5
+-
+  casename: 数字之和等于5，存在负数
+  data: "-3,2,4"
+  assert: 数据类型错误
+  group: p1
+
+#用例6
+-
+  casename: 数字之和等于5，存在空字串
+  data: "'',2,3"
+  assert: 数据类型错误
+  group: p1
+
+#用例7
+-
+  casename: 数字之和等于5，存在0
+  data: "0,2,3"
+  assert: [2, 3]
+  group: p1
+
+#用例8
+-
+  casename: 数字之和等于5，存在小数
+  data: "1.5,1.5,2"
+  assert: 数据类型错误
+  group: p1
+
